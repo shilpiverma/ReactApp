@@ -22,5 +22,8 @@ jobs:
     - name: Deploy Code
       run: npm run predeploy
     - name: Deploy Code 
-      run: npm run deploy
+      uses: shilpiverma/ReactApp
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./build
    
