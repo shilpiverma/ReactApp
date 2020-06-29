@@ -1,17 +1,57 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+ 
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const user = {
+  firstName: 'Shilpi',
+  lastName: 'MAdaan'
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+var medicalPackages=[
+  {PackageTypeId:2,Amount:200},
+  {PackageTypeId:3,Amount:200},
+  {PackageTypeId:4,Amount:200},
+];
+
+
+
+function ReactHooks() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+
+  console.log(medicalPackages);
+useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  });
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+
+     
+    </div>
+  );
+}
+class HelloWorld extends React.Component {
+    
+    render(){
+          return (
+                  <div>
+                    Hello, {formatName(user)}
+                    <h2>It is {new Date().toLocaleTimeString()}.</h2>
+                  </div>
+                )
+        }
+};
+
+
+function tick() {
+    ReactDOM.render(<ReactHooks />, document.getElementById('root'));
+  }
+  setInterval(tick, 1000);
