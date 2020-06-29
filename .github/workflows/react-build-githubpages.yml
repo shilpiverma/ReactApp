@@ -19,10 +19,7 @@ jobs:
       run: npm install
     - name: Build page
       run: npm run build
-    - name: Deploy Code
-      run: npm run predeploy
-    - name: Deploy Code 
-      run: npm run deploy
+    - name: Deploy to gh-pages 
       uses: shilpiverma/ReactApp
       with:
         deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
