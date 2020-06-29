@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve('build'),
-    filename: 'index_bundle.js'
+    filename: 'public/index_bundle.js'
   },
   module: {
     rules: [
@@ -12,7 +12,9 @@ module.exports = {
     ]
   },plugins: [
     new CopyWebpackPlugin([{
-      from: './*.html'
+      from: './public/*.*',
+      to: '.',
+      force:true
     }])
   ]
 }
