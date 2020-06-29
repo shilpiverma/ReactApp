@@ -19,8 +19,8 @@ jobs:
       run: npm install
     - name: Build page
       run: npm run build
-    - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ./build
+    - name: Deploy Code
+      run: npm run predeploy
+    - name: Deploy Code 
+      run: npm run deploy
+   
