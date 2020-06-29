@@ -38,17 +38,7 @@ useEffect(() => {
     </div>
   );
 }
-class HelloWorld extends React.Component {
-    
-    render(){
-          return (
-                  <div>
-                    Hello term, {formatName(user)}
-                    <h2>It is {new Date().toLocaleTimeString()}.</h2>
-                  </div>
-                )
-        }
-};
+
 
 
 function tick() {
